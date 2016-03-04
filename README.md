@@ -1,7 +1,7 @@
 ADI Labs
 Spring 2016
 
-A project to inform people when they should expect the next subway
+QUMBIA!
 
 Team:
 Cameron Averill
