@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :questions, dependent: :destroy
   has_many :answers, dependent: :destroy
+  validates_format_of :email, with: /\@columbia\.edu/, message: 'You must sign up with a Columbia email'
 end
