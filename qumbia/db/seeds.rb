@@ -8,7 +8,7 @@
 
 
 Question.destroy_all
-ques1 = Question.create! title: 'what are dogs', text: 'are they trees'
+ques1 = Question.create! title: 'what are dogs', text: 'are they tree'
 ques2 = Question.create! title: 'who is smart', text: 'is it cameron'
 ques3 = Question.create! title: 'Can I trust Sean', text: 'he seems slimy'
 
