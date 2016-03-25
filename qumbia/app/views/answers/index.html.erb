@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Qumbia</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
-</html>
+<h1>Answers</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @answers.each do |answer| %>
+    <tr>
+      <td><%= answer.question_id %></td>
+      <td><%= answer.text %></td>
+    </tr>
+  <% end %>
+</table>
