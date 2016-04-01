@@ -18,8 +18,16 @@
 			<div class="content">
 				<ul>
 					<li class="action-item"><a href="#top"><p>QUMBIA</p></a></li>
-					<li><p><%= link_to "newsfeed",questions_path %></p></li>
-					<li><p><%= link_to "ask a question", new_question_path %></p></li>
+					<li>
+						<%= link_to(questions_path) do %>
+						<p>newsfeed</p>
+						<% end -%>
+					</li>
+					<li>
+						<%= link_to(new_question_path) do %>
+						<p>ask a question</p>
+						<% end -%>
+					</li>
 				</ul>
 				<ul class="right">
 					<li><a href="#"><p>sign up</p></a></li>

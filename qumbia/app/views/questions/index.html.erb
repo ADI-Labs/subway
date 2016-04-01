@@ -1,9 +1,10 @@
 <!-- list of questions -->
 
-<% @questions.each do |question| %>
-  <h3>
-  	Question: <%= question.title %></h3>
-  <p>
-  	Description: <%= question.text %>
-  </p>
-<% end %>
+<div class="question">
+	<div class="content">
+		<% @questions.each do |question| %>
+		  	<h3>Question: <%= question.title %></h3>
+		  	<p>Description: <%= question.text %></p>
+		<% end %>
+	</div>
+</div>
