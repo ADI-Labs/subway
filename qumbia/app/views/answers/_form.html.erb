@@ -1,0 +1,5 @@
+<%= form_for([question, question.answers.build]) do |f| %>
+	<%= f.label :answer %>:
+	<%= f.text_field :body %> <br />
+	<%= f.submit %>
+<% end %>

@@ -7,6 +7,7 @@ class QuestionsController < ApplicationController
 
 	def show
 		@question = Question.find(params[:id])
+		@answers = @question.answers
 	end
 
 	def new
@@ -30,7 +31,7 @@ class QuestionsController < ApplicationController
 	def update
 		@question = Question.find(params[:id])
 
-		if @question.update(answer_params)
+		if @question.update(question_params)
 			redirect_to @question
 		else
 			render 'edit'
