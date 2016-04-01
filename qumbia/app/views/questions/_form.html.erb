@@ -1,0 +1,12 @@
+<%= bootstrap_form_for(@question) do |f| %>
+  <div>
+    <%= f.text_field :title, label: "Question: " %>
+  </div>
+  <div>
+    <%= f.text_area :text, label: "Description: ", placeholder: "Enter Details ... ", size: '60x6' %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+

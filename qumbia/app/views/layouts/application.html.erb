@@ -11,13 +11,15 @@
     <p class="alert"><%= alert %></p>
 
 </head>
-<body>
 
+<body>
 	<div class="navbar-wrapper">
 		<nav>
 			<div class="content">
 				<ul>
 					<li class="action-item"><a href="#top"><p>QUMBIA</p></a></li>
+					<li><p><%= link_to "newsfeed",questions_path %></p></li>
+					<li><p><%= link_to "ask a question", new_question_path %></p></li>
 				</ul>
 				<ul class="right">
 					<li><a href="#"><p>sign up</p></a></li>
