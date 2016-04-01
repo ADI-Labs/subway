@@ -10,7 +10,7 @@ class AnswersController < ApplicationController
   def destroy
     @question = Question.find(params[:question_id])
     @answer = @question.answers.find(params[:id])
-    @answer.destry
+    @answer.destroy
     redirect_to article_path(@question)
   end
   
