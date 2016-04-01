@@ -1,13 +1,11 @@
-<!-- list of questions -->
-<h1> Qumbia </h1>
-<div>
-  <h3> Quora for Columbia </h3>
-</div>
 
-<% @questions.each do |question| %>
-  <h3>
-  	Question: <%= question.title %></h3>
-  <p>
-  	Description: <%= question.text %>
-  </p>
-<% end %>
+<!-- list of questions -->
+
+<div class="question">
+	<div class="content">
+		<% @questions.each do |question| %>
+		  	<h3>Question: <%= question.title %></h3>
+		  	<p>Description: <%= question.text %></p>
+		<% end %>
+	</div>
+</div>

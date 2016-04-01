@@ -1,29 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Qumbia</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-</head>
-<body>
+	<title>Qumbia</title>
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
 
-<header>
-  <div>
-    <ul>
-      <li><%= link_to "Newsfeed", questions_path %></li>
-    </ul>
-  </div>
-  <div>
-    <ul>
-      <li><%= link_to "Ask a Question", new_question_path %></li>
-    </ul>
-  </div>
-</header>
+</head>
+
+<body>
+	<nav>
+		<div class="content">
+			<ul>
+				<li class="action-item"><a href="#top"><p>QUMBIA</p></a></li>
+				<li>
+					<%= link_to(questions_path) do %>
+					<p>newsfeed</p>
+					<% end -%>
+				</li>
+				<li>
+					<%= link_to(new_question_path) do %>
+					<p>ask a question</p>
+					<% end -%>
+				</li>
+			</ul>
+			<ul class="right">
+				<li><a href="#"><p>sign up</p></a></li>
+				<li><a href="#"><p>log in</p></a></li>
+				<li><a href="#"><p>help</p></a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<div class="content">
+			<h1> Qumbia </h1>
+			<div>
+				<h3> Quora for Columbia </h3>
+			</div>
+		</div>
+	</div>
+
 
 <%= yield %>
 
 </body>
+
+<footer>
+	<div class="content">
+		<p>Built by ADI's Qumbia Team!</p>
+	</div>
+</footer>
 </html>
