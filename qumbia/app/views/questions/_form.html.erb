@@ -1,0 +1,14 @@
+
+<div class="content">
+	<%= bootstrap_form_for(@question) do |f| %>
+		<div class="form-group">
+			<%= f.text_field :title, label: "Question: " %>
+		</div>
+		<div class="form-group">
+			<%= f.text_area :text, label: "Description: ", placeholder: "Enter Details ... ", size: '60x6' %>
+		</div>
+		
+		<%= f.submit "Create", class: "btn btn-success"%>
+	<% end %>
+</div>
+
