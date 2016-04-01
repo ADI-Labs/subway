@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
 	end
 
 	def create
-		@question = Question.new(answer_params)
+		@question = Question.new(question_params)
 
 		if @question.save
 			redirect_to @question
@@ -31,7 +31,7 @@ class QuestionsController < ApplicationController
 	def update
 		@question = Question.find(params[:id])
 
-		if @question.update(answer_params)
+		if @question.update(question_params)
 			redirect_to @question
 		else
 			render 'edit'
