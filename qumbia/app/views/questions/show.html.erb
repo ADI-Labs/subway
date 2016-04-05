@@ -1,0 +1,12 @@
+<div class="content">
+	<h1> <%= @question.title %> </h1>
+	<h2> <%= @question.text %> </h2>
+	<% @question.answers.each do |answer| %>
+	    <tr>
+	    	<td> <%= answer.user.email %> : <%=answer.body %></td>
+	    	</br>
+	    </tr>
+	<% end %>
+
+	<%= render partial: "answers/form", locals: {question: @question, answer: @answer} %>
+</div>
