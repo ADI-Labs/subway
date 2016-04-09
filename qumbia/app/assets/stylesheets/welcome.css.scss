@@ -10,13 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require answers.scss
- *= require questions.scss
  *= require_self
  *= require rails_bootstrap_forms
  */
 
-@import "bootstrap-sprockets";
+ @import "bootstrap-sprockets";
 @import "bootstrap";
 
  /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
@@ -79,65 +77,6 @@ section { padding: 6rem 0 3rem; }
 	margin: 0 auto;
 	width: 100%;
 	float: center;
+	text-align: center;
 }
 
-/* Navbar Styles */
-nav {
-	height: 64px;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	background: #f5f5f5;
-	z-index: 2;
-}
-nav ul {
-	height: 64px;
-	margin: 0;
-	padding: 0;
-	display: inline-block;
-	font-size: 0;
-	list-style: none;
-}
-nav ul li {
-	font-size: 16px;
-	padding: 0;
-	display: inline-block;
-}
-nav ul li p {
-	height: 64px;
-	line-height: 32px;
-	margin: 0;
-	padding: 16px 16px;
-}
-nav ul li:hover {
-	cursor: pointer;
-	background-color: #eee;
-}
-nav ul li.action-item {
-	color: white;
-	background-color: #0fa8f7;
-}
-nav ul li.action-item:hover {
-	color: white;
-	background-color: #00b0ff;
-}
-nav ul.right { float: right; }
-
-.jumbotron {
-	background-color: white;
-}
-
-/* Footer */
-footer {
-	margin-top: 28px;
-	padding: 14px;
-	background-color: #5a5a5a;
-	color: white;
-	bottom: 0;
-}
-footer p {
-	color: #dddddd;
-	font-size: 12px;
-	display: inline-block;
-}
-footer p.right { float: right; }
