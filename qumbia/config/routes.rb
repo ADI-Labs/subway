@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'questions#index'
 
+
+  post 'questions/search' => 'questions#search', as: 'search_questions'
+  get 'all_question_updates/:id' => 'question_updates#index', as: 'all_question_updates'
+  get 'question_updates/new/:id' => 'question_updates#new', as: 'new_question_update'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
