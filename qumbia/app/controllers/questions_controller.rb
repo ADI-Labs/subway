@@ -1,6 +1,14 @@
 class QuestionsController < ApplicationController
-	before_action :authenticate_user!, except: [:index]
+	skip_before_action :authenticate_user!
 	
+	before_action :check_auth
+
+    def check_auth
+       unless user_signed_in?
+         redirect_to :controller => :welcome, :action => 'index'
+       end
+    end 
+
 	def index
 		@questions = Question.all
 	end
