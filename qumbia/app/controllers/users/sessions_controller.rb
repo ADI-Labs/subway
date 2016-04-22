@@ -22,4 +22,5 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.for(:sign_in) << :attribute
   # end
+  render layout: "../views/layouts/welcome.html.erb" 
 end
