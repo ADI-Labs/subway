@@ -1,9 +1,9 @@
 <div class="content">
-	<%- if controller_name != 'sessions' %>
+	<%- if controller_name != 'sessions' && controller_name != 'welcome' %>
 	  <%= link_to "Log in", new_session_path(resource_name) %><br />
 	<% end -%>
 
-	<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+	<%- if devise_mapping.registerable? && controller_name != 'registrations' && controller_name != 'welcome' %>
 	  <%= link_to "Sign up", new_registration_path(resource_name) %><br />
 	<% end -%>
 

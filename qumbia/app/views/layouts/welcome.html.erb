@@ -20,7 +20,13 @@
 
 		<p>Please log in or register!</p>
 		<div class="sign-in-up">
-			<%= render "users/sessions/new" %>
+			<div class="sign-in">
+				<%= render "users/sessions/new" %>
+			</div>
+			
+			<div class="sign-up">
+				<%= render "users/registrations/new" %>
+			</div>
 		</div>
 	</div>	
 </body>
