@@ -4,30 +4,38 @@
 	<title>ASK ALMA</title>
 	<%= stylesheet_link_tag 'welcome' %>
 	<%= stylesheet_link_tag 'welcome', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' %>
-	<%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
 	<div class="jumbotron">
 		<div class="content">
 			<h1>Welcome to Ask Alma.</h1>
+
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+		</div>
+
+		<div class="sign-in-up">
+			<ul class="tabs">
+				<li class="tab active"><a href="#login">Log In</a></li>
+				<li class="tab"><a href="#signup">Sign Up</a></li>
+			</ul>
+
+			<div class="tab-forms">
+				<div id="login">
+					<h3>Welcome back!</h3>
+					<%= render "users/sessions/new" %>
+					<%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+				</div>
+				
+				<div id="signup">
+					<h3>Sign up with your Columbia email.</h3>
+					<%= render "users/registrations/new" %>
+				</div>
+			</div>
 		</div>
 	</div>
-
-	<div class="content">
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-
-		<p>Please log in or register!</p>
-		<div class="sign-in-up">
-			<div class="sign-in">
-				<%= render "users/sessions/new" %>
-			</div>
-			
-			<div class="sign-up">
-				<%= render "users/registrations/new" %>
-			</div>
-		</div>
-	</div>	
 </body>
+
+<%= javascript_include_tag 'welcome' %>
 </html>

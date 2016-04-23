@@ -63,8 +63,6 @@ ul {
 	padding-left: 32px;
 }
 
-ul li { padding: 8px 0; }
-
 p {
 	margin: 16px 0;
 	line-height: 1.8;
@@ -78,5 +76,123 @@ section { padding: 6rem 0 3rem; }
 	width: 100%;
 	float: center;
 	text-align: center;
+}
+
+.jumbotron {
+	background-color: white;
+}
+
+.sign-in-up {
+	background: #e3efee;
+	padding: 40px;
+	width: 45%;
+	max-width: 600px;
+	margin: 40px auto;
+	border-radius: 4px;
+	box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+.tabs {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 40px 0;
+}
+.tabs:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.tabs li a {
+	display: block;
+	text-decoration: none;
+	padding: 15px;
+	background: rgba(160, 179, 176, 0.25);
+	color: #a0b3b0;
+	font-size: 20px;
+	float: left;
+	width: 50%;
+	text-align: center;
+	cursor: pointer;
+	-webkit-transition: .5s ease;
+	transition: .5s ease;
+}
+.tabs li a:hover {
+	background: #179b77;
+	color: #ffffff;
+}
+.tabs .active a {
+	background: #1ab188;
+	color: #ffffff;
+}
+
+.tab-forms {
+	text-align: center;
+	font-weight: 300;
+	margin: 0 0 40px;
+}
+.tab-forms > div:last-child {
+	display: none;
+}
+
+#login:after, #signup:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#login > div, #signup > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+#login > div:last-child, #signup > div:last-child {
+  margin: 0;
+}
+
+.field { 
+	display: block;
+	height: 40px;
+	border: 1px solid transparent;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	text-align: left;
+	position: relative;
+}
+
+input{
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+input:focus {
+  outline: 0;
+  border-color: #1ab188;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-weight: 600;
+  letter-spacing: .1em;
+  background: #1ab188;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #179b77;
+}
+.button-block {
+  display: block;
+  width: 100%;
 }
 
