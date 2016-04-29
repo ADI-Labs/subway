@@ -4,6 +4,7 @@
 	<title>ASK ALMA</title>
 	<%= stylesheet_link_tag 'welcome' %>
 	<%= stylesheet_link_tag 'welcome', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' %>
+    <%= stylesheet_link_tag 'welcome', 'https://fontlibrary.org/face/trueno' %>
 	<%= javascript_include_tag 'welcome', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
@@ -12,16 +13,16 @@
 		<div class="content">
 			<h1>Welcome to Ask Alma.</h1>
 		</div>
+        
+        <div class="content">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+
+            <p>Please log in or register!</p>
+            <div class="sign-in-up">
+                <%= render "users/sessions/new" %>
+            </div>
+	   </div>	
 	</div>
-
-	<div class="content">
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-
-		<p>Please log in or register!</p>
-		<div class="sign-in-up">
-			<%= render "users/sessions/new" %>
-		</div>
-	</div>	
 </body>
 </html>

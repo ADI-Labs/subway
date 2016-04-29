@@ -22,9 +22,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-	font-family: Roboto, sans-serif;
+	font-family:  'TruenoLight', Lato, sans-serif;
 	font-weight: 300;
-	color: #222222;
+	color: #fff;
 	line-height: 1.7; }
 h1 {
 	font-size: 2.75rem; }
@@ -42,12 +42,12 @@ h6 {
 /* Base element styles */
 html {
 	background-color: white;
-	color: black;
 }
 
 body {
-	font-family: Roboto, sans-serif;
+	font-family: 'TruenoLight', Lato, sans-serif;
 	font-size: 14px;
+    color: #fff;
 	line-height: 22px;
 	background-color: white;
 }
@@ -80,3 +80,59 @@ section { padding: 6rem 0 3rem; }
 	text-align: center;
 }
 
+.jumbotron {
+    height: 100vh;
+    background: #3ea9f5;
+    margin-bottom: 0;
+}
+
+.sign-in-up {
+    color: #fff;
+    line-height: 2.5rem;
+}
+
+input {
+    color: #222;
+}
+
+.form-def {
+    width: 40vw;
+    max-width: 250px;
+    border-radius: 4px;
+    padding: 5px 23px;
+    border: #fff solid 1px;
+}
+
+.pw {
+    letter-spacing: 1.5px;
+}
+
+.btn {
+    font-size: 16px;
+    font-family: 'TruenoRegular', Lato, sans-serif;
+    color: #fff;
+    background: #3769cc;
+    width: 19vw;
+    max-width: 120px;
+    margin: 0 4px;
+    padding: 6px 6px;
+}
+
+.btn:hover,.btn:focus {
+    color: #fff;
+    background: #2f5eba;
+    transition: background .15s ease-in-out;
+}
+
+.btn-secondary {
+    border: 2px solid #3769cc;
+    color: #3769cc;
+    background: none;
+}
+
+.btn-secondary:hover,.btn-secondary:focus {
+    color: #2f5eba;
+    border: 2px solid #2f5eba;
+    background: none;
+    transition: color .15s ease-in-out, border .15s ease-in-out;
+}
