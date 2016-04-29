@@ -5,16 +5,11 @@ class QuestionsController < ApplicationController
 		@questions = Question.all
 	end
 
-	def search
-		@q = "%#{params[:query]}%"
-		@questions = Question.where("title LIKE ? or text LIKE ?", @q, @q)
-	end
-
 	def show
 		@question = Question.find(params[:id])
 		@answers = @question.answers
 	end
-
+	
 	def new
 		@question = Question.new
 	end
