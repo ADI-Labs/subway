@@ -1,0 +1,11 @@
+<div class="search">
+
+	<div class="content">
+		<% @answers.each do |answer| %>
+		<%= link_to(answer.question) do %>
+		  	<h3>Answer: <%= answer.body %></h3>
+		<% end -%>
+		<% end %>
+	</div>
+		
+</div>

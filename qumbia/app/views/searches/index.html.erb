@@ -1,0 +1,24 @@
+<div class="search">
+
+	<div class="content">
+
+		<%=	link_to "See all questions", search_questions_path(:query=> @q) %>
+		<% @questions[0..2].each do |question| %>
+		<%= link_to(question) do %>
+		  	<h3>Question: <%= question.title %></h3>
+		  	<p>Description: <%= question.text %></p>
+		<% end -%>
+		<% end %>
+	</div>
+
+	<div class="content">
+		<%=	link_to "See all answers", search_answers_path(:query=> @q) %>
+		<% @answers[0..2].each do |answer| %>
+		<%= link_to(answer.question) do %>
+		  	<h3>Answer: <%= answer.body %></h3>
+		<% end -%>
+		<% end %>
+	</div>
+
+
+</div>
