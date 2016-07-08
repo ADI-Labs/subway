@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
 
+
+
   resources :questions do
     resources :answers
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -11,6 +14,14 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+
+  post 'searches/index' => 'searches#index', as: 'searches'
+
+  get 'searches/search_questions' => 'searches#search_questions', as: 'search_questions'
+
+  get 'searches/search_answers' => 'searches#search_answers', as: 'search_answers'
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
