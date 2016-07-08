@@ -90,30 +90,31 @@ section { padding: 6rem 0 3rem; }
 }
 
 .sign-in-up {
-    color: #fff;
+    color: #e3efee;
     font-weight: 300;
-    line-height: 20px;
-    background: white;
+    line-height: 2rem;
+    background: #000;
     width: 45%;
     max-width: 600px;
-    padding: 20px;
-    margin: 0 auto;
+    padding: 40px;
+    margin: 40px auto;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px rgba(19,35,47,0.3);
 }
-
-.field { color: black !important; }
 
 ::-webkit-input-placeholder { color: black; }
 :-moz-placeholder { /* Firefox 18- */ color: black; }
 ::-moz-placeholder {  /* Firefox 19+ */ color: black; }
 :-ms-input-placeholder { color: black; }
-/*
+
+input {
+    color: #222;
+}
+
 .form-def {
-    width: 40vw;
-    max-width: 250px;
+    width: 100%;
     border-radius: 4px;
-    padding: 5px 23px;
+    padding: 10px 10px;
     border: #fff solid 1px;
 }
 
@@ -151,7 +152,6 @@ section { padding: 6rem 0 3rem; }
     background: none;
     transition: color .15s ease-in-out, border .15s ease-in-out;
 }
-*/
 
 .tabs {
 	list-style: none;
@@ -189,6 +189,7 @@ section { padding: 6rem 0 3rem; }
 .tab-forms {
 	text-align: center;
 	font-weight: 300;
+  margin: 0 0 40px;
 }
 .tab-forms > div:last-child {
 	display: none;
@@ -210,10 +211,11 @@ section { padding: 6rem 0 3rem; }
 
 .field { 
 	display: block;
-	height: 40px;
+	height: auto;
 	border: 1px solid transparent;
 	border-top-left-radius: 2px;
 	border-bottom-left-radius: 2px;
+  margin-bottom: 8px;
 	text-align: left;
 	position: relative;
 	color: #eee;

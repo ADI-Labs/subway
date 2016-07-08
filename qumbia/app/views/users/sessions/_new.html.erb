@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   	<div class="field">
 		<!--<%= f.label :email %><br />-->
@@ -22,3 +23,27 @@
 		<%= f.submit "Log in", :class=> 'button button-block' %>
 	</div>
 <% end %>
+=======
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  	<div class="field">
+		<%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, placeholder: "uni@columbia.edu", class: "form-def" %>
+  	</div>
+
+  	<div class="field">
+		<%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off", placeholder: "password", class: "form-def pw" %>
+  	</div>
+
+  	<% if devise_mapping.rememberable? -%>
+		<div class="field">
+            <%= f.check_box :remember_me %>
+		  	<%= f.label :remember_me %>
+		</div>
+	<% end -%>
+
+	<div class="actions">
+		<%= f.submit "Log in", :class=> 'button button-block' %>
+	</div>
+<% end %>
+>>>>>>> ea713e5db46f0e44c47c78107245721e8a10b744
