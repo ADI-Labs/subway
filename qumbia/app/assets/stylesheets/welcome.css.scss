@@ -184,11 +184,11 @@ input[type="checkbox"] {
 
 .field { 
 	display: block;
-	height: 40px;
+	height: auto;
 	border: 1px solid transparent;
 	border-top-left-radius: 2px;
 	border-bottom-left-radius: 2px;
-    margin-bottom: 36px;
+    margin-bottom: 8px;
 	text-align: left;
 	position: relative;
 }
