@@ -34,11 +34,6 @@ ActiveRecord::Schema.define(version: 20160422174510) do
 
   add_index "questions", ["user_id"], name: "index_questions_on_user_id"
 
-  create_table "search_results", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "searches", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
