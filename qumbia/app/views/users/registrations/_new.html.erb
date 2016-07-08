@@ -3,7 +3,7 @@
 
   	<div class="field">
 		<%= f.label :email %>
-		<%= f.email_field :email, autofocus: true %>
+		<%= f.email_field :email, autofocus: true, class: "form-def pw" %>
   	</div>
 
   	<div class="field">
@@ -11,12 +11,12 @@
 		<% if @minimum_password_length %>
 			<em>(<%= @minimum_password_length %> characters minimum)</em>
 		<% end %>
-		<%= f.password_field :password, autocomplete: "off" %>
+		<%= f.password_field :password, autocomplete: "off", class: "form-def pw" %>
   	</div>
 
  	<div class="field">
 		<%= f.label :password_confirmation %>
-		<%= f.password_field :password_confirmation, autocomplete: "off" %>
+		<%= f.password_field :password_confirmation, autocomplete: "off", class: "form-def pw" %>
   	</div>
 
   	<div class="actions">
