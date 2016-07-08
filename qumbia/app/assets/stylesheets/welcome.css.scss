@@ -22,8 +22,8 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-	font-family:  'TruenoLight', Lato, sans-serif;
-	font-weight: 300;
+	font-family:  'Roboto', sans-serif;
+	font-weight: 400;
 	color: #fff;
 	line-height: 1.7; }
 h1 {
@@ -45,9 +45,9 @@ html {
 }
 
 body {
-	font-family: 'TruenoLight', Lato, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
-    color: #fff;
+  color: #fff;
 	line-height: 22px;
 	background-color: white;
 }
@@ -83,23 +83,32 @@ section { padding: 6rem 0 3rem; }
     background: #3ea9f5;
     margin-bottom: 0;
 }
+.jumbotron h1 { font-size: 100px; }
+.jumbotron h3 { 
+  color: black; 
+  font-weight: 300;
+}
 
 .sign-in-up {
     color: #fff;
-    line-height: 2.5rem;
-    background: #000;
-    padding: 40px;
+    font-weight: 300;
+    line-height: 20px;
+    background: white;
     width: 45%;
     max-width: 600px;
-    margin 40px auto;
+    padding: 20px;
+    margin: 0 auto;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px rgba(19,35,47,0.3);
 }
 
-input {
-    color: #222;
-}
+.field { color: black !important; }
 
+::-webkit-input-placeholder { color: black; }
+:-moz-placeholder { /* Firefox 18- */ color: black; }
+::-moz-placeholder {  /* Firefox 19+ */ color: black; }
+:-ms-input-placeholder { color: black; }
+/*
 .form-def {
     width: 40vw;
     max-width: 250px;
@@ -112,7 +121,7 @@ input {
     letter-spacing: 1.5px;
 }
 
-/*
+
 .btn {
     font-size: 16px;
     font-family: 'TruenoRegular', Lato, sans-serif;
@@ -143,16 +152,6 @@ input {
     transition: color .15s ease-in-out, border .15s ease-in-out;
 }
 */
-
-.sign-in-up {
-	background: #e3efee;
-	padding: 40px;
-	width: 45%;
-	max-width: 600px;
-	margin: 40px auto;
-	border-radius: 4px;
-	box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-}
 
 .tabs {
 	list-style: none;
@@ -190,7 +189,6 @@ input {
 .tab-forms {
 	text-align: center;
 	font-weight: 300;
-	margin: 0 0 40px;
 }
 .tab-forms > div:last-child {
 	display: none;
@@ -218,6 +216,7 @@ input {
 	border-bottom-left-radius: 2px;
 	text-align: left;
 	position: relative;
+	color: #eee;
 }
 
 input{
