@@ -74,30 +74,37 @@ section { padding: 6rem 0 3rem; }
 	max-width: 1100px;
 	margin: 0 auto;
 	width: 100%;
-	float: center;
 	text-align: center;
 }
+/*.content p { display: none }*/
 
 .jumbotron {
     height: 100vh;
     background: #3ea9f5;
     margin-bottom: 0;
+    background-image: url(asset-path("statue_blue.jpg"));
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
-.jumbotron h1 { font-size: 100px; }
+.jumbotron h1 { font-size: 100px; color: #3ea9f5;}
 .jumbotron h3 { 
   color: black; 
   font-weight: 300;
+  padding-bottom: 1em;
 }
 
 .sign-in-up {
     color: #e3efee;
     font-weight: 300;
     line-height: 2rem;
-    background: #000;
-    width: 45%;
-    max-width: 600px;
+    background: rgba(255, 255, 255, 0.7);
+    /*width: 40%;
+    min-width: 400px;*/
+    width: 420px;
     padding: 40px;
-    margin: 40px auto;
+    margin: 0 auto;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px rgba(19,35,47,0.3);
 }
@@ -112,7 +119,8 @@ input {
 }
 
 .form-def {
-    width: 100%;
+    width: 80%;
+    float: right;
     border-radius: 4px;
     padding: 10px 10px;
     border: #fff solid 1px;
@@ -125,9 +133,8 @@ input {
 
 .btn {
     font-size: 16px;
-    font-family: 'TruenoRegular', Lato, sans-serif;
     color: #fff;
-    background: #3769cc;
+    background: #3ea9f5;
     width: 19vw;
     max-width: 120px;
     margin: 0 4px;
@@ -136,19 +143,19 @@ input {
 
 .btn:hover,.btn:focus {
     color: #fff;
-    background: #2f5eba;
+    background: #666;
     transition: background .15s ease-in-out;
 }
 
 .btn-secondary {
-    border: 2px solid #3769cc;
-    color: #3769cc;
+    border: 2px solid #222;
+    color: #222;
     background: none;
 }
 
 .btn-secondary:hover,.btn-secondary:focus {
-    color: #2f5eba;
-    border: 2px solid #2f5eba;
+    color: #69befb;
+    border: 2px solid #69befb;
     background: none;
     transition: color .15s ease-in-out, border .15s ease-in-out;
 }
@@ -156,7 +163,7 @@ input {
 .tabs {
 	list-style: none;
 	padding: 0;
-	margin: 0 0 40px 0;
+	margin: 0 0 2em 0;
 }
 .tabs:after {
 	content: "";
@@ -166,7 +173,7 @@ input {
 .tabs li a {
 	display: block;
 	text-decoration: none;
-	padding: 15px;
+	padding: 0.5em;
 	background: rgba(160, 179, 176, 0.25);
 	color: #a0b3b0;
 	font-size: 20px;
@@ -178,23 +185,24 @@ input {
 	transition: .5s ease;
 }
 .tabs li a:hover {
-	background: #179b77;
+	background: #3598de;
 	color: #ffffff;
 }
 .tabs .active a {
-	background: #1ab188;
+	background: #3ea9f5;
 	color: #ffffff;
 }
 
 .tab-forms {
 	text-align: center;
 	font-weight: 300;
-  margin: 0 0 40px;
+  margin: 0 0;
 }
 .tab-forms > div:last-child {
 	display: none;
 }
 
+#login a { color: black; }
 #login:after, #signup:after {
   content: "";
   display: table;
@@ -210,16 +218,23 @@ input {
 }
 
 .field { 
-	display: block;
-	height: auto;
-	border: 1px solid transparent;
-	border-top-left-radius: 2px;
-	border-bottom-left-radius: 2px;
   margin-bottom: 8px;
 	text-align: left;
 	position: relative;
-	color: #eee;
+	color: black;
+  overflow: hidden;
 }
+.field input { 
+  display: inline-block; 
+  position: relative; 
+  background-color: white;
+}
+.field input[type='checkbox'] { 
+  width: 7%; 
+  height: auto;
+  margin-top: 2.5%;
+  margin-left: 20%;
+} 
 
 input{
   display: block;
@@ -228,14 +243,14 @@ input{
   padding: 5px 10px;
   background: none;
   background-image: none;
-  border: 1px solid #a0b3b0;
+  border: 1px solid #222;
   border-radius: 0;
   -webkit-transition: border-color .25s ease, box-shadow .25s ease;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
 input:focus {
   outline: 0;
-  border-color: #1ab188;
+  border-color: #3ea9f5;
 }
 
 .button {
@@ -245,14 +260,14 @@ input:focus {
   padding: 15px 0;
   font-weight: 600;
   letter-spacing: .1em;
-  background: #1ab188;
+  background: #3ea9f5;
   color: #ffffff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-  background: #179b77;
+  background: #3598de;
 }
 .button-block {
   display: block;
