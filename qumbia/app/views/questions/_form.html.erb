@@ -1,4 +1,4 @@
-
+<% @question.categories.build %>
 <div class="content">
 	<%= bootstrap_form_for(@question) do |f| %>
 		<div class="form-group">
@@ -8,7 +8,13 @@
 			<%= f.text_area :text, label: "Description: ", placeholder: "Enter Details ... ", size: '60x6' %>
 		</div>
 		
+	<h2>Categories</h2>
+  	<%= render :partial => 'categories/form',
+             :locals => {:form => f} %>
+
+
 		<%= f.submit "Create", class: "btn btn-success"%>
+
 	<% end %>
 </div>
 
