@@ -17,4 +17,9 @@ class SearchesController < ApplicationController
 		@answers = Answer.where("body LIKE?", @q)
 	end
 
+	def search_categories
+		@q = "%#{params[:query]}%"
+		@categories = Category.where("name LIKE?", @q)
+	end
+
 end

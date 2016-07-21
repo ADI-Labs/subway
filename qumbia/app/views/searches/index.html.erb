@@ -20,5 +20,12 @@
 		<% end %>
 	</div>
 
-
+	<div class="content">
+		<%=	link_to "See all categories", search_categories_path(:query=> @q) %>
+		<% @categories[0..2].each do |category| %>
+		<%= link_to(category) do %>
+		  	<h3> <%= category.name %></h3>
+		<% end -%>
+		<% end %>
+	</div>
 </div>

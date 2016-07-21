@@ -1,0 +1,11 @@
+<div class="search">
+
+	<div class="content">
+		<% @categories.each do |category| %>
+		<%= link_to(category) do %>
+		  	<h3><%= category.name %></h3>
+		<% end -%>
+		<% end %>
+	</div>
+		
+</div>
