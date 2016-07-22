@@ -79,7 +79,8 @@ section { padding: 6rem 0 3rem; }
 /*.content p { display: none }*/
 
 .jumbotron {
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     background: #3ea9f5;
     margin-bottom: 0;
     background-image: url(asset-path("statue_blue.jpg"));
