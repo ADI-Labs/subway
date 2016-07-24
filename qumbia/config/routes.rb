@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   # devise_scope :user do
-  #   get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
-  #   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  #   get 'sign_in', :to => 'devise/sessions#new'
+  #   get 'sign_out', :to => 'devise/sessions#destroy'
+  #   delete 'sign_out', :to => 'devise/sessions#destroy'
   # end
+
   get 'welcome/index'
-
-
 
   resources :questions do
     resources :answers
-
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -25,8 +24,6 @@ Rails.application.routes.draw do
   get 'searches/search_questions' => 'searches#search_questions', as: 'search_questions'
 
   get 'searches/search_answers' => 'searches#search_answers', as: 'search_answers'
-
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
