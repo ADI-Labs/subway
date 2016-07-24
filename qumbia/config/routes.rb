@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   #   delete 'sign_out', :to => 'devise/sessions#destroy'
   # end
 
-  get 'welcome/index'
+  get 'questions/index'
 
   resources :questions do
     resources :answers
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'questions#index'
 
   post 'searches/index' => 'searches#index', as: 'searches'
 
