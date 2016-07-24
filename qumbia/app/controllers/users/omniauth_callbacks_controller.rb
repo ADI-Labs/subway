@@ -1,4 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  skip_before_filter :verify_authenticity_token
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 

@@ -241,7 +241,9 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
   config.omniauth :google_oauth2, "622159612356-s53cb6e27bjv8b367rpi060s265j8qen.apps.googleusercontent.com", "oKSAlZu_xkhdeWz_d9L5bF9A", skip_jwt: true
-                                  {:hd => 'columbia.edu'}
+                                  {:hd => 'harvard.edu',
+                                   :skip_jwt => true,
+                                   :client_options => {:ssl => {:ca_file => 'lib/assets/cacert.pem'}}}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
