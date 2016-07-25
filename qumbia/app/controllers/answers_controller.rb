@@ -5,7 +5,7 @@ class AnswersController < ApplicationController
 
     def check_auth
        unless user_signed_in?
-         redirect_to :controller => :welcome, :action => 'index'
+         redirect_to :controller => :questions, :action => 'index'
        end
     end 
   

@@ -32,9 +32,11 @@
 			</ul>
 			<ul class="right">
 				<li>
-					<%= link_to(destroy_user_session_path, :method => :delete) do %>
-					<p>logout</p>
-					<% end -%>
+					<% if user_signed_in? %>
+  						<li>
+  							<%= link_to('logout', destroy_user_session_path, :method => :delete) %>
+  						</li>
+					<% end %>
 				</li>
 				<li><a href="#"><p>help</p></a></li>
 			</ul>
