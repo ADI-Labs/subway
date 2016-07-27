@@ -66,6 +66,11 @@ ul {
 p {
 	margin: 16px 0;
 	line-height: 1.8;
+
+	&.notice,
+	&.alert {
+		margin: 0;
+	}
 }
 
 section { padding: 6rem 0 3rem; }
@@ -79,7 +84,7 @@ section { padding: 6rem 0 3rem; }
 /*.content p { display: none }*/
 
 .jumbotron {
-    height: 100vh;
+    min-height: 100vh;
     background: #3ea9f5;
     margin-bottom: 0;
     background-image: url(asset-path("statue_blue.jpg"));
@@ -88,11 +93,16 @@ section { padding: 6rem 0 3rem; }
     background-position: center center;
     background-repeat: no-repeat;
 }
-.jumbotron h1 { font-size: 100px; color: #3ea9f5;}
+.jumbotron h1 {
+  font-size: 100px;
+  color: #3ea9f5;
+  margin: -20px;
+}
+
 .jumbotron h3 { 
   color: black; 
   font-weight: 300;
-  padding-bottom: 1em;
+  padding-bottom: .5em;
 }
 
 .sign-in-up {
@@ -100,13 +110,20 @@ section { padding: 6rem 0 3rem; }
     font-weight: 300;
     line-height: 2rem;
     background: rgba(255, 255, 255, 0.7);
-    /*width: 40%;
-    min-width: 400px;*/
+    min-width: 300px;
     width: 420px;
     padding: 40px;
     margin: 0 auto;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px rgba(19,35,47,0.3);
+
+    label {
+      display: inline-block;
+    }
+
+    label[for='user_remember_me'] {
+    	vertical-align: middle;
+    }
 }
 
 ::-webkit-input-placeholder { color: black; }
@@ -119,8 +136,8 @@ input {
 }
 
 .form-def {
-    width: 80%;
-    float: right;
+	display: block;
+    width: 100%;
     border-radius: 4px;
     padding: 10px 10px;
     border: #fff solid 1px;
@@ -163,7 +180,7 @@ input {
 .tabs {
 	list-style: none;
 	padding: 0;
-	margin: 0 0 2em 0;
+	margin: 0 0 1em 0;
 }
 .tabs:after {
 	content: "";
@@ -218,7 +235,7 @@ input {
 }
 
 .field { 
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 	text-align: left;
 	position: relative;
 	color: black;
@@ -230,10 +247,11 @@ input {
   background-color: white;
 }
 .field input[type='checkbox'] { 
+  display: inline-block;
   width: 7%; 
-  height: auto;
-  margin-top: 2.5%;
-  margin-left: 20%;
+  height: 16px;
+  vertical-align: middle;
+  margin-top: 0;
 } 
 
 input{
@@ -272,4 +290,172 @@ input:focus {
 .button-block {
   display: block;
   width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+  .jumbotron {
+    h1 {
+      font-size: 80px;
+    }
+  }
+  .sign-in-up {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .jumbotron {
+    h1 {
+      font-size: 70px;
+    }
+  }
+}
+
+/**tablet media queries**/
+@media screen and (min-device-width: 690px) and (max-device-width: 995px) {
+	.jumbotron {
+		.content {
+			margin-top: 36px;
+
+			h1 {
+				font-size: 100px;
+			}
+		}
+
+		.sign-in-up {
+			width: 60%;
+
+			.actions {
+				input[type='submit'] {
+					padding: 16px 0;
+					font-size: 24px;
+					margin: 12px 0;
+				}
+			}
+
+			.tabs {
+				.tab {
+					a {
+						padding: 1em 0;
+						font-size: 2em;
+					}
+				}
+			}
+
+			label {
+				margin: 0;
+				font-size: 24px;
+			}
+			.form-def {
+				border-radius: 4px;
+				padding: 16px;
+				font-size: 24px;
+				margin: 12px 0;
+				border-width: 3px;
+			}
+
+			.tab-forms {
+				#login {
+					a {
+						font-size: 24px;
+					}
+					h3 {
+						font-size: 24px;
+					}
+					.new_user {
+						.field {
+							margin-bottom: 8px;
+
+							input[type='checkbox'] {
+								height: 16px;
+								margin-top: 0;
+								width: 8%;
+								vertical-align: middle;
+							}
+						}
+					}
+				}
+
+				#signup {
+					h3 {
+						font-size: 24px;
+					}
+				}
+			}
+		}
+	}
+}
+/**mobile media queries **/
+@media screen and (min-device-width: 320px) and (max-device-width: 690px) {
+	.jumbotron {
+		.content {
+			margin-top: 12px;
+
+			h1 {
+				font-size: 140px;
+			}
+		}
+
+		.sign-in-up {
+			width: 85%;
+
+			.actions {
+				input[type='submit'] {
+					padding: 48px 0;
+					font-size: 48px;
+					margin: 36px 0;
+				}
+			}
+
+			.tabs {
+				.tab {
+					a {
+						padding: 48px 0;
+						font-size: 48px;
+					}
+				}
+			}
+
+			label {
+				margin: 16px 0;
+				font-size: 48px;
+			}
+			.form-def {
+				border-radius: 8px;
+				padding: 36px 36px;
+				font-size: 48px;
+				margin: 24px 0;
+				border-width: 3px;
+			}
+
+			.tab-forms {
+				#login {
+					a {
+						font-size: 36px;
+					}
+					h3 {
+						font-size: 40px;
+					}
+					.new_user {
+						.field {
+							margin-bottom: 16px;
+
+							input[type='checkbox'] {
+								height: 48px;
+								margin-top: 0;
+								width: 12%;
+								vertical-align: middle;
+							}
+						}
+					}
+				}
+
+				#signup {
+					h3 {
+						font-size: 40px;
+					}
+				}
+			}
+		}
+	}
 }
