@@ -66,6 +66,11 @@ ul {
 p {
 	margin: 16px 0;
 	line-height: 1.8;
+
+	&.notice,
+	&.alert {
+		margin: 0;
+	}
 }
 
 section { padding: 6rem 0 3rem; }
@@ -74,32 +79,51 @@ section { padding: 6rem 0 3rem; }
 	max-width: 1100px;
 	margin: 0 auto;
 	width: 100%;
-	float: center;
 	text-align: center;
 }
+/*.content p { display: none }*/
 
 .jumbotron {
-    height: 100vh;
+    min-height: 100vh;
     background: #3ea9f5;
     margin-bottom: 0;
+    background-image: url(asset-path("statue_blue.jpg"));
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
-.jumbotron h1 { font-size: 100px; }
+.jumbotron h1 {
+  font-size: 100px;
+  color: #3ea9f5;
+  margin: -20px;
+}
+
 .jumbotron h3 { 
   color: black; 
   font-weight: 300;
+  padding-bottom: .5em;
 }
 
 .sign-in-up {
     color: #e3efee;
     font-weight: 300;
     line-height: 2rem;
-    background: #000;
-    width: 45%;
-    max-width: 600px;
+    background: rgba(255, 255, 255, 0.7);
+    min-width: 300px;
+    width: 420px;
     padding: 40px;
-    margin: 40px auto;
+    margin: 0 auto;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px rgba(19,35,47,0.3);
+
+    label {
+      display: inline-block;
+    }
+
+    label[for='user_remember_me'] {
+    	vertical-align: middle;
+    }
 }
 
 ::-webkit-input-placeholder { color: black; }
@@ -112,6 +136,7 @@ input {
 }
 
 .form-def {
+	display: block;
     width: 100%;
     border-radius: 4px;
     padding: 10px 10px;
@@ -125,9 +150,8 @@ input {
 
 .btn {
     font-size: 16px;
-    font-family: 'TruenoRegular', Lato, sans-serif;
     color: #fff;
-    background: #3769cc;
+    background: #3ea9f5;
     width: 19vw;
     max-width: 120px;
     margin: 0 4px;
@@ -136,19 +160,19 @@ input {
 
 .btn:hover,.btn:focus {
     color: #fff;
-    background: #2f5eba;
+    background: #666;
     transition: background .15s ease-in-out;
 }
 
 .btn-secondary {
-    border: 2px solid #3769cc;
-    color: #3769cc;
+    border: 2px solid #222;
+    color: #222;
     background: none;
 }
 
 .btn-secondary:hover,.btn-secondary:focus {
-    color: #2f5eba;
-    border: 2px solid #2f5eba;
+    color: #69befb;
+    border: 2px solid #69befb;
     background: none;
     transition: color .15s ease-in-out, border .15s ease-in-out;
 }
@@ -156,7 +180,7 @@ input {
 .tabs {
 	list-style: none;
 	padding: 0;
-	margin: 0 0 40px 0;
+	margin: 0 0 1em 0;
 }
 .tabs:after {
 	content: "";
@@ -166,7 +190,7 @@ input {
 .tabs li a {
 	display: block;
 	text-decoration: none;
-	padding: 15px;
+	padding: 0.5em;
 	background: rgba(160, 179, 176, 0.25);
 	color: #a0b3b0;
 	font-size: 20px;
@@ -178,23 +202,24 @@ input {
 	transition: .5s ease;
 }
 .tabs li a:hover {
-	background: #179b77;
+	background: #3598de;
 	color: #ffffff;
 }
 .tabs .active a {
-	background: #1ab188;
+	background: #3ea9f5;
 	color: #ffffff;
 }
 
 .tab-forms {
 	text-align: center;
 	font-weight: 300;
-  margin: 0 0 40px;
+  margin: 0 0;
 }
 .tab-forms > div:last-child {
 	display: none;
 }
 
+#login a { color: black; }
 #login:after, #signup:after {
   content: "";
   display: table;
@@ -210,16 +235,24 @@ input {
 }
 
 .field { 
-	display: block;
-	height: auto;
-	border: 1px solid transparent;
-	border-top-left-radius: 2px;
-	border-bottom-left-radius: 2px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 	text-align: left;
 	position: relative;
-	color: #eee;
+	color: black;
+  overflow: hidden;
 }
+.field input { 
+  display: inline-block; 
+  position: relative; 
+  background-color: white;
+}
+.field input[type='checkbox'] { 
+  display: inline-block;
+  width: 7%; 
+  height: 16px;
+  vertical-align: middle;
+  margin-top: 0;
+} 
 
 input{
   display: block;
@@ -228,14 +261,14 @@ input{
   padding: 5px 10px;
   background: none;
   background-image: none;
-  border: 1px solid #a0b3b0;
+  border: 1px solid #222;
   border-radius: 0;
   -webkit-transition: border-color .25s ease, box-shadow .25s ease;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
 input:focus {
   outline: 0;
-  border-color: #1ab188;
+  border-color: #3ea9f5;
 }
 
 .button {
@@ -245,16 +278,184 @@ input:focus {
   padding: 15px 0;
   font-weight: 600;
   letter-spacing: .1em;
-  background: #1ab188;
+  background: #3ea9f5;
   color: #ffffff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-  background: #179b77;
+  background: #3598de;
 }
 .button-block {
   display: block;
   width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+  .jumbotron {
+    h1 {
+      font-size: 80px;
+    }
+  }
+  .sign-in-up {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .jumbotron {
+    h1 {
+      font-size: 70px;
+    }
+  }
+}
+
+/**tablet media queries**/
+@media screen and (min-device-width: 690px) and (max-device-width: 995px) {
+	.jumbotron {
+		.content {
+			margin-top: 36px;
+
+			h1 {
+				font-size: 100px;
+			}
+		}
+
+		.sign-in-up {
+			width: 60%;
+
+			.actions {
+				input[type='submit'] {
+					padding: 16px 0;
+					font-size: 24px;
+					margin: 12px 0;
+				}
+			}
+
+			.tabs {
+				.tab {
+					a {
+						padding: 1em 0;
+						font-size: 2em;
+					}
+				}
+			}
+
+			label {
+				margin: 0;
+				font-size: 24px;
+			}
+			.form-def {
+				border-radius: 4px;
+				padding: 16px;
+				font-size: 24px;
+				margin: 12px 0;
+				border-width: 3px;
+			}
+
+			.tab-forms {
+				#login {
+					a {
+						font-size: 24px;
+					}
+					h3 {
+						font-size: 24px;
+					}
+					.new_user {
+						.field {
+							margin-bottom: 8px;
+
+							input[type='checkbox'] {
+								height: 16px;
+								margin-top: 0;
+								width: 8%;
+								vertical-align: middle;
+							}
+						}
+					}
+				}
+
+				#signup {
+					h3 {
+						font-size: 24px;
+					}
+				}
+			}
+		}
+	}
+}
+/**mobile media queries **/
+@media screen and (min-device-width: 320px) and (max-device-width: 690px) {
+	.jumbotron {
+		.content {
+			margin-top: 12px;
+
+			h1 {
+				font-size: 140px;
+			}
+		}
+
+		.sign-in-up {
+			width: 85%;
+
+			.actions {
+				input[type='submit'] {
+					padding: 48px 0;
+					font-size: 48px;
+					margin: 36px 0;
+				}
+			}
+
+			.tabs {
+				.tab {
+					a {
+						padding: 48px 0;
+						font-size: 48px;
+					}
+				}
+			}
+
+			label {
+				margin: 16px 0;
+				font-size: 48px;
+			}
+			.form-def {
+				border-radius: 8px;
+				padding: 36px 36px;
+				font-size: 48px;
+				margin: 24px 0;
+				border-width: 3px;
+			}
+
+			.tab-forms {
+				#login {
+					a {
+						font-size: 36px;
+					}
+					h3 {
+						font-size: 40px;
+					}
+					.new_user {
+						.field {
+							margin-bottom: 16px;
+
+							input[type='checkbox'] {
+								height: 48px;
+								margin-top: 0;
+								width: 12%;
+								vertical-align: middle;
+							}
+						}
+					}
+				}
+
+				#signup {
+					h3 {
+						font-size: 40px;
+					}
+				}
+			}
+		}
+	}
 }
