@@ -10,6 +10,8 @@
 
 <body>
 	<nav>
+		<%= render :partial => 'layouts/search' %>
+
 		<div class="content">
 			<ul>
 				<li class="action-item">
@@ -27,11 +29,7 @@
 					<p>ask a question</p>
 					<% end -%>
 				</li>
-				<li>
-					<%= render :partial => 'layouts/search' %>		
-				</li>
 			</ul>
-
 			<ul class="right">
 				<li>
 					<% if user_signed_in? %>
