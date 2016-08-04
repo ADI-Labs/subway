@@ -3,6 +3,7 @@ class AnswersController < ApplicationController
   
   before_action :check_auth
 
+  
     def check_auth
        unless user_signed_in?
          redirect_to :controller => :questions, :action => 'index'

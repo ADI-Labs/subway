@@ -1,15 +1,1 @@
-
-<!-- list of questions -->
-
-<div class="question">
-	<div class="content">
-		<% @questions.each do |question| %>
-			<div class="post">
-			<%= link_to(question) do %>
-			  	<h3>Question: <%= question.title %></h3>
-			  	<p>Description: <%= question.text %></p>
-			<% end -%>
-			</div>
-		<% end %>
-	</div>
-</div>
+<%= react_component('Main') %>
