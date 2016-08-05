@@ -29,8 +29,8 @@ var QuestionBlock = React.createClass({
 	},
 
 	handleAnswerSubmit: function() {
-		this.setState({answerQuestionClick: !this.state.answerQuestionClicked});
-		console.log('blerg');
+		this.setState(this.getInitialState());
+		this.props.refreshQuestions();
 	},
 
 	render: function() {
@@ -42,7 +42,7 @@ var QuestionBlock = React.createClass({
 					(<span> <QuestionAnswerForm 
 						questionAnswerText={this.state.questionAnswerText}
 						onQuestionAnswerTextChange={this.handleQuestionAnswerTextChange}
-						onAnswerSubmit={this.props.handleAnswerSubmit}
+						onAnswerSubmit={this.handleAnswerSubmit}
 						questionId={this.props.question.id}
 						currentUser={this.props.currentUser}
 					 />

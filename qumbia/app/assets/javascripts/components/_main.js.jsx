@@ -27,7 +27,8 @@ var Main = React.createClass({
 			var questionHeaders = [];
 			questionHeaders = questionsAsJsonObject.map(function(question) {
 				return (<QuestionBlock question={question} key={question.id} 
-							currentUser={this.props.currentUser}/>);
+							currentUser={this.props.currentUser}
+							refreshQuestions={this.loadQuestionsFromServer}/>);
 			}.bind(this));
 			return questionHeaders;
 		}

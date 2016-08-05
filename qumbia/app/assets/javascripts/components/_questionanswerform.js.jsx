@@ -37,7 +37,6 @@ var QuestionAnswerForm = React.createClass({
 	},
 
 	collapseAnswerForm: function() {
-		//	why don't you work?????
 		this.props.onAnswerSubmit();
 	},
 
