@@ -1,0 +1,178 @@
+Searching 514 files for "sprocket"
+
+/Users/cameronaverill/Desktop/AskAlma/AskAlma/qumbia/Gemfile.lock:
+  152        bundler (>= 1.3.0, < 2.0)
+  153        railties (= 4.2.4)
+  154:       sprockets-rails
+  155      rails-deprecated_sanitizer (1.0.3)
+  156        activesupport (>= 4.2.0.alpha)
+  ...
+  182        railties (>= 4.0.0, < 6)
+  183        sass (~> 3.1)
+  184:       sprockets (>= 2.8, < 4.0)
+  185:       sprockets-rails (>= 2.0, < 4.0)
+  186        tilt (>= 1.1, < 3)
+  187      sdoc (0.4.1)
+  ...
+  190      slop (3.6.0)
+  191      spring (1.7.2)
+  192:     sprockets (3.7.0)
+  193        concurrent-ruby (~> 1.0)
+  194        rack (> 1, < 3)
+  195:     sprockets-rails (3.1.1)
+  196        actionpack (>= 4.0)
+  197        activesupport (>= 4.0)
+  198:       sprockets (>= 3.0.0)
+  199      sqlite3 (1.3.11)
+  200      sqlite3 (1.3.11-x86-mingw32)
+  ...
+  217        binding_of_caller (>= 0.7.2)
+  218        railties (>= 4.0)
+  219:       sprockets-rails (>= 2.0, < 4.0)
+  220  
+  221  PLATFORMS
+
+/Users/cameronaverill/Desktop/AskAlma/AskAlma/qumbia/app/assets/javascripts/application.js:
+    8  // compiled file.
+    9  //
+   10: // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+   11  // about supported directives.
+   12  //
+   ..
+   14  //= require jquery_ujs
+   15  //= require turbolinks
+   16: //= require bootstrap-sprockets
+   17  //= require react
+   18  //= require react_ujs
+
+/Users/cameronaverill/Desktop/AskAlma/AskAlma/qumbia/app/assets/javascripts/welcome.js:
+    8  // compiled file.
+    9  //
+   10: // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+   11  // about supported directives.
+   12  //
+   ..
+   14  //= require jquery_ujs
+   15  //= require turbolinks
+   16: //= require bootstrap-sprockets
+   17  //= require_self
+   18  
+
+/Users/cameronaverill/Desktop/AskAlma/AskAlma/qumbia/app/assets/stylesheets/application.css.scss:
+   17   */
+   18  
+   19: @import "bootstrap-sprockets";
+   20  @import "bootstrap";
+   21  
+
+/Users/cameronaverill/Desktop/AskAlma/AskAlma/qumbia/app/assets/stylesheets/welcome.css.scss:
+   15   */
+   16  
+   17: @import "bootstrap-sprockets";
+   18  @import "bootstrap";
+   19  
+
+/Users/cameronaverill/Desktop/AskAlma/AskAlma/qumbia/config/environments/development.rb:
+   33  
+   34    # Adds additional error checking when serving assets at runtime.
+   35:   # Checks for improperly declared sprockets dependencies.
+   36    # Raises helpful error messages.
+   37    config.assets.raise_runtime_errors = true
+
+~/Desktop/AskAlma/AskAlma/qumbia/log/development.log:
+    <binary>
+
+~/Desktop/AskAlma/AskAlma/qumbia/tmp/cache/assets/sprockets/v3.0/L2/L2PHoVKeuCGB3yNeupWiBkIYauSG108m1Ovz098s4SU.cache:
+    <binary>
+
+~/Desktop/AskAlma/AskAlma/qumbia/tmp/cache/assets/sprockets/v3.0/NF/NFzOAaOVn6nzdLhlVmWOE9CDjeYkBU8vnSyf0ZLQ0tg.cache:
+    <binary>
+
+~/Desktop/AskAlma/AskAlma/qumbia/tmp/cache/assets/sprockets/v3.0/xt/xtTDh9u6up08xHarWr5uU6OBy9fKvbt6Ag6dh0-KtYE.cache:
+    <binary>
+
+23 matches across 10 files
+
+
+Searching 514 files for "sprocket"
+
+/Users/cameronaverill/Desktop/AskAlma/AskAlma/qumbia/Gemfile.lock:
+  152        bundler (>= 1.3.0, < 2.0)
+  153        railties (= 4.2.4)
+  154:       sprockets-rails
+  155      rails-deprecated_sanitizer (1.0.3)
+  156        activesupport (>= 4.2.0.alpha)
+  ...
+  182        railties (>= 4.0.0, < 6)
+  183        sass (~> 3.1)
+  184:       sprockets (>= 2.8, < 4.0)
+  185:       sprockets-rails (>= 2.0, < 4.0)
+  186        tilt (>= 1.1, < 3)
+  187      sdoc (0.4.1)
+  ...
+  190      slop (3.6.0)
+  191      spring (1.7.2)
+  192:     sprockets (3.7.0)
+  193        concurrent-ruby (~> 1.0)
+  194        rack (> 1, < 3)
+  195:     sprockets-rails (3.1.1)
+  196        actionpack (>= 4.0)
+  197        activesupport (>= 4.0)
+  198:       sprockets (>= 3.0.0)
+  199      sqlite3 (1.3.11)
+  200      sqlite3 (1.3.11-x86-mingw32)
+  ...
+  217        binding_of_caller (>= 0.7.2)
+  218        railties (>= 4.0)
+  219:       sprockets-rails (>= 2.0, < 4.0)
+  220  
+  221  PLATFORMS
+
+/Users/cameronaverill/Desktop/AskAlma/AskAlma/qumbia/app/assets/javascripts/application.js:
+    8  // compiled file.
+    9  //
+   10: // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+   11  // about supported directives.
+   12  //
+
+/Users/cameronaverill/Desktop/AskAlma/AskAlma/qumbia/app/assets/javascripts/welcome.js:
+    8  // compiled file.
+    9  //
+   10: // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+   11  // about supported directives.
+   12  //
+
+/Users/cameronaverill/Desktop/AskAlma/AskAlma/qumbia/app/assets/stylesheets/application.css.scss:
+   17   */
+   18  
+   19: @import "bootstrap-sprockets";
+   20  @import "bootstrap";
+   21  
+
+/Users/cameronaverill/Desktop/AskAlma/AskAlma/qumbia/app/assets/stylesheets/welcome.css.scss:
+   15   */
+   16  
+   17: @import "bootstrap-sprockets";
+   18  @import "bootstrap";
+   19  
+
+/Users/cameronaverill/Desktop/AskAlma/AskAlma/qumbia/config/environments/development.rb:
+   33  
+   34    # Adds additional error checking when serving assets at runtime.
+   35:   # Checks for improperly declared sprockets dependencies.
+   36    # Raises helpful error messages.
+   37    config.assets.raise_runtime_errors = true
+
+~/Desktop/AskAlma/AskAlma/qumbia/log/development.log:
+    <binary>
+
+~/Desktop/AskAlma/AskAlma/qumbia/tmp/cache/assets/sprockets/v3.0/L2/L2PHoVKeuCGB3yNeupWiBkIYauSG108m1Ovz098s4SU.cache:
+    <binary>
+
+~/Desktop/AskAlma/AskAlma/qumbia/tmp/cache/assets/sprockets/v3.0/NF/NFzOAaOVn6nzdLhlVmWOE9CDjeYkBU8vnSyf0ZLQ0tg.cache:
+    <binary>
+
+~/Desktop/AskAlma/AskAlma/qumbia/tmp/cache/assets/sprockets/v3.0/xt/xtTDh9u6up08xHarWr5uU6OBy9fKvbt6Ag6dh0-KtYE.cache:
+    <binary>
+
+21 matches across 10 files
