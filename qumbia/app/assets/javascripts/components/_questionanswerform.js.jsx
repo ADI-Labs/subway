@@ -8,15 +8,14 @@ var QuestionAnswerForm = React.createClass({
 		event.preventDefault();
 		console.log('dog');
 		var answer = this.props.questionAnswerText;
-		var user = this.props.currentUser;
-		if (!answer || !user) {
+		if (!answer) {
 			return;
 		}
-		this.handleAnswerSubmit(answer, user);
+		this.handleAnswerSubmit(answer);
 		this.collapseAnswerForm();
 	},
 
-	handleAnswerSubmit: function(answerBody, user) {
+	handleAnswerSubmit: function(answerBody) {
 		var postUrl = "/questions/" 
 					+ this.props.questionId 
 						+ "/answers";

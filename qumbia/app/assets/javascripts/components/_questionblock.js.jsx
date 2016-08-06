@@ -10,7 +10,7 @@ var QuestionBlock = React.createClass({
 	generateQuestionAnswers: function() {
 		var answers = this.props.question.answers;
 		var questionAnswers = answers.map(function(answer) {
-			return(<QuestionAnswer userEmail={answer.user.email} answerBody={answer.body} />);
+			return(<QuestionAnswer userEmail={answer.user.email} answerBody={answer.body} answer={answer}/>);
 		});
 		return questionAnswers;
 	},

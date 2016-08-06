@@ -13,7 +13,10 @@ class QuestionsController < ApplicationController
 					},
 					{:answers => 
 						{ 
-							:include => {:user => {:only => [:email]}}, 
+							:include => [
+											:upvotes, 
+											{:user => {:only => [:email]}}
+									    ], 
 							:except => [:created_at, :updated_at, :user_id]
 						}
 					},
