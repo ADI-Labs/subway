@@ -13,7 +13,6 @@ var Main = React.createClass({
 	   		contentType: 'application/json',
 	    	cache: false,
 	    success: function(questions) {
-	    	console.log(JSON.stringify(questions));
 	        this.setState({questions: questions});
 	    }.bind(this),
 	    error: function() {
@@ -27,7 +26,7 @@ var Main = React.createClass({
 			var questionHeaders = [];
 			questionHeaders = questionsAsJsonObject.map(function(question) {
 				return (<QuestionBlock question={question} key={question.id} 
-							currentUser={this.props.currentUser}
+							currentUser={JSON.parse(this.props.currentUser)}
 							refreshQuestions={this.loadQuestionsFromServer}/>);
 			}.bind(this));
 			return questionHeaders;
@@ -39,7 +38,6 @@ var Main = React.createClass({
     },
 
 	render: function() {
-		console.log(this.props.currentUser);
 		var questionBlocks = this.generateQuestionBlocks(this.state.questions);
 		return (
 			<div className="questionBlocks">

@@ -10,8 +10,21 @@ var QuestionBlock = React.createClass({
 	generateQuestionAnswers: function() {
 		var answers = this.props.question.answers;
 		var questionAnswers = answers.map(function(answer) {
-			return(<QuestionAnswer userEmail={answer.user.email} answerBody={answer.body} answer={answer}/>);
-		});
+			var userUpvotedAnswer = false;
+			if(this.props.currentUser.hasOwnProperty("upvotes")) {
+				for (var i=0; i < this.props.currentUser.upvotes.length; i++) {
+					if(this.props.currentUser.upvotes[i]["answer_id"] === answer.id) {
+						userUpvotedAnswer = true;
+						break;
+					}
+				}
+			}
+			return(<QuestionAnswer 
+					userEmail={answer.user.email} 
+					answerBody={answer.body} 
+					answer={answer}
+					currentUserUpvoted={userUpvotedAnswer}/>);
+		}.bind(this));
 		return questionAnswers;
 	},
 

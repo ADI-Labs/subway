@@ -12,8 +12,8 @@ class UpvotesController < ApplicationController
   
   def new
     @answer = Answer.find(params["answer_id"].to_i)
-    @upvote = @answer.build
-    respond_with(@answer)
+    @upvote = @answer.upvotes.build
+    respond_with(@upvote)
   end
 
   def create
@@ -21,7 +21,7 @@ class UpvotesController < ApplicationController
     @upvote = @answer.upvotes.build(upvote_params)
     @upvote.user = current_user
     respond_to do |format|
-      if @answer.save
+      if @upvote.save
         format.html { redirect_to @upvote, notice: "Save process completed!" }
         format.json { render json: @upvote}
       else
@@ -35,10 +35,9 @@ class UpvotesController < ApplicationController
   end
   
   def destroy
-    @answer = Answer.find(params[:answer_id])
-    @upvote = @answer.upvotes.find(params[:id])
+    @upvote = Upvote.find(params[:id])
     @upvote.destroy
-    redirect_to question_answer_path(@question.answer, @answer)
+    return
   end
   
   private

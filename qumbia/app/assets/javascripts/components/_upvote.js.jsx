@@ -2,7 +2,7 @@ var Upvote = React.createClass({
 
   getInitialState: function() {
     return {
-      upvoted: false
+      upvoted: this.props.currentUserUpvoted
     };
   },
 
@@ -18,17 +18,16 @@ var Upvote = React.createClass({
 
   handleUpvoteSubmit: function(answer) {
     console.log('made it');
+    var postUrl = "";
     var postUrl = "/answers/" 
           + answer.id
-            + "/upvotes";
+            + "/upvote";
     console.log(postUrl);
     $.ajax({
           url: postUrl,
           dataType: 'json',
-          type: 'POST',
-          data: {"upvote":
-                {"answer_id": answer.id}
-          },
+          type: 'PUT',
+          data: {},
           success: function(response) {
             this.setState({upvoted: !this.state.upvoted});
           }.bind(this),
@@ -38,11 +37,32 @@ var Upvote = React.createClass({
     });
   },
 
+  handleUpvoteCount: function() {
+    var count = this.props.answer.upvotes.length
+    if(this.props.currentUserUpvoted) {
+      if(this.state.upvoted) {
+        return count;
+      }
+      else {
+        return count - 1;
+      }
+    }
+    else {
+      if(this.state.upvoted) {
+        return count + 1;
+      }
+      else {
+        return count;
+      }
+    }
+  },
+
   render: function() {
-    const text = this.state.upvoted ? 'UPVOTED' : 'upvote';
+    var text = this.state.upvoted ? 'UPVOTED' : 'upvote';
+    var upvoteCount = this.handleUpvoteCount();
     return (
       <button onClick={this.handleClick}>
-        {text} {this.props.answer.upvotes.length}
+        {text} {upvoteCount}
       </button>
     );
   }

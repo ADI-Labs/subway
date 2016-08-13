@@ -41,8 +41,21 @@ class AnswersController < ApplicationController
     redirect_to article_path(@question)
   end
   
+  def upvote
+      @answer = Answer.find(params[:answer_id])
+      @upvote = Upvote.find_by(answer_id: @answer.id, user_id: current_user.id)
+      if @upvote 
+          @upvote.destroy
+      else
+          Upvote.create(user_id: current_user.id, answer_id: @answer.id)
+      end
+      respond_to do |format|
+        format.json { render json: @upvote}
+      end
+  end
+
   private
     def answer_params
       params.require(:answer).permit(:body)
-  end
+    end
 end
