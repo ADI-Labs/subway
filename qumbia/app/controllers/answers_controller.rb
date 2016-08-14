@@ -44,10 +44,21 @@ class AnswersController < ApplicationController
   def vote
       @answer = Answer.find(params[:answer_id])
       @vote = Vote.find_by(answer_id: @answer.id, user_id: current_user.id)
+      isUpvote = params[:isUpvote]
       if @vote 
+        #user unclicked a selection
+        if (isUpvote == @vote.isUpvote)
           @vote.destroy
+        #user changed selection up <-> down
+        else
+          if !@vote.update_attributes(isUpvote: isUpvote)
+            respond_to do |format|
+              format.json { render json: "error updating vote" }
+            end
+          end
+        end
       else
-          Vote.create(user_id: current_user.id, answer_id: @answer.id)
+        Vote.create(user_id: current_user.id, answer_id: @answer.id, isUpvote: isUpvote)
       end
       respond_to do |format|
         format.json { render json: @vote}
