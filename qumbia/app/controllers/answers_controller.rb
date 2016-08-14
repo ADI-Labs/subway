@@ -41,16 +41,16 @@ class AnswersController < ApplicationController
     redirect_to article_path(@question)
   end
   
-  def upvote
+  def vote
       @answer = Answer.find(params[:answer_id])
-      @upvote = Upvote.find_by(answer_id: @answer.id, user_id: current_user.id)
-      if @upvote 
-          @upvote.destroy
+      @vote = Vote.find_by(answer_id: @answer.id, user_id: current_user.id)
+      if @vote 
+          @vote.destroy
       else
-          Upvote.create(user_id: current_user.id, answer_id: @answer.id)
+          Vote.create(user_id: current_user.id, answer_id: @answer.id)
       end
       respond_to do |format|
-        format.json { render json: @upvote}
+        format.json { render json: @vote}
       end
   end
 

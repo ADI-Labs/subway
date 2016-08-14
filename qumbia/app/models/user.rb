@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:google_oauth2]
   has_many :questions, dependent: :destroy
   has_many :answers, dependent: :destroy
-  has_many :upvotes, dependent: :destroy
+  has_many :votes, dependent: :destroy
   validates_format_of :email, with: /\@columbia\.edu/, message: 'You must sign up with a Columbia email'
 
   def self.from_omniauth(auth)

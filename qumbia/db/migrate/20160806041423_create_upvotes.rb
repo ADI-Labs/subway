@@ -1,6 +1,6 @@
-class CreateUpvotes < ActiveRecord::Migration
+class CreateVotes < ActiveRecord::Migration
   def change
-    create_table :upvotes do |t|
+    create_table :votes do |t|
       t.references :user, index: true, foreign_key: true
       t.references :answer, index: true, foreign_key: true
 

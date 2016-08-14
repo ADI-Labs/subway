@@ -1,8 +1,8 @@
-var Upvote = React.createClass({
+var Vote = React.createClass({
 
   getInitialState: function() {
     return {
-      upvoted: this.props.currentUserUpvoted
+      voted: this.props.currentUserVoted
     };
   },
 
@@ -13,15 +13,15 @@ var Upvote = React.createClass({
     if (!answer) {
       return;
     }
-    this.handleUpvoteSubmit(answer);
+    this.handleVoteSubmit(answer);
   },
 
-  handleUpvoteSubmit: function(answer) {
+  handleVoteSubmit: function(answer) {
     console.log('made it');
     var postUrl = "";
     var postUrl = "/answers/" 
           + answer.id
-            + "/upvote";
+            + "/vote";
     console.log(postUrl);
     $.ajax({
           url: postUrl,
@@ -29,18 +29,18 @@ var Upvote = React.createClass({
           type: 'PUT',
           data: {},
           success: function(response) {
-            this.setState({upvoted: !this.state.upvoted});
+            this.setState({voted: !this.state.voted});
           }.bind(this),
           error: function() {
-            console.error("Upvote failed");
+            console.error("Vote failed");
           }.bind(this)
     });
   },
 
-  handleUpvoteCount: function() {
-    var count = this.props.answer.upvotes.length
-    if(this.props.currentUserUpvoted) {
-      if(this.state.upvoted) {
+  handleVoteCount: function() {
+    var count = this.props.answer.votes.length
+    if(this.props.currentUserVoted) {
+      if(this.state.voted) {
         return count;
       }
       else {
@@ -48,7 +48,7 @@ var Upvote = React.createClass({
       }
     }
     else {
-      if(this.state.upvoted) {
+      if(this.state.voted) {
         return count + 1;
       }
       else {
@@ -58,11 +58,11 @@ var Upvote = React.createClass({
   },
 
   render: function() {
-    var text = this.state.upvoted ? 'UPVOTED' : 'upvote';
-    var upvoteCount = this.handleUpvoteCount();
+    var text = this.state.voted ? 'UPVOTED' : 'vote';
+    var voteCount = this.handleVoteCount();
     return (
       <button onClick={this.handleClick}>
-        {text} {upvoteCount}
+        {text} {voteCount}
       </button>
     );
   }

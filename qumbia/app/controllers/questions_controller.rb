@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
 					{:answers => 
 						{ 
 							:include => [
-											:upvotes, 
+											:votes, 
 											{:user => {:only => [:email]}}
 									    ], 
 							:except => [:created_at, :updated_at, :user_id]

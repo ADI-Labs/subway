@@ -10,11 +10,11 @@ var QuestionBlock = React.createClass({
 	generateQuestionAnswers: function() {
 		var answers = this.props.question.answers;
 		var questionAnswers = answers.map(function(answer) {
-			var userUpvotedAnswer = false;
-			if(this.props.currentUser.hasOwnProperty("upvotes")) {
-				for (var i=0; i < this.props.currentUser.upvotes.length; i++) {
-					if(this.props.currentUser.upvotes[i]["answer_id"] === answer.id) {
-						userUpvotedAnswer = true;
+			var userVotedAnswer = false;
+			if(this.props.currentUser.hasOwnProperty("votes")) {
+				for (var i=0; i < this.props.currentUser.votes.length; i++) {
+					if(this.props.currentUser.votes[i]["answer_id"] === answer.id) {
+						userVotedAnswer = true;
 						break;
 					}
 				}
@@ -23,7 +23,7 @@ var QuestionBlock = React.createClass({
 					userEmail={answer.user.email} 
 					answerBody={answer.body} 
 					answer={answer}
-					currentUserUpvoted={userUpvotedAnswer}/>);
+					currentUserVoted={userVotedAnswer}/>);
 		}.bind(this));
 		return questionAnswers;
 	},
