@@ -31,7 +31,6 @@ var Vote = React.createClass({
     var postUrl = "/answers/" 
           + answer.id
             + "/vote";
-    console.log(postUrl);
     $.ajax({
           url: postUrl,
           dataType: 'json',

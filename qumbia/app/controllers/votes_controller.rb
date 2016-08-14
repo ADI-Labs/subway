@@ -26,7 +26,7 @@ class VotesController < ApplicationController
         format.json { render json: @vote}
       else
         format.html { 
-          flash.now[:notice]="Save proccess coudn't be completed!" 
+          flash.now[:notice]="Save proccess couldn't be completed!" 
           render :new 
         }
         format.json { render json: "Vote failed to post" }

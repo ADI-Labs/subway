@@ -44,10 +44,15 @@ class AnswersController < ApplicationController
   def vote
       @answer = Answer.find(params[:answer_id])
       @vote = Vote.find_by(answer_id: @answer.id, user_id: current_user.id)
-      isUpvote = params[:isUpvote]
+      isUpvote = (params[:isUpvote] == "true")
       if @vote 
         #user unclicked a selection
-        if (isUpvote == @vote.isUpvote)
+        logger.debug '@vote.isUpvote: ' 
+        logger.debug @vote.isUpvote.class
+        logger.debug 'isUpvote: ' 
+        logger.debug isUpvote.class
+        if (((not isUpvote) and (not @vote.isUpvote)) or (isUpvote and @vote.isUpvote))
+          logger.debug 'turtle'
           @vote.destroy
         #user changed selection up <-> down
         else
