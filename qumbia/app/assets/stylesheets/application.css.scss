@@ -148,4 +148,24 @@ footer p {
 	font-size: 12px;
 	display: inline-block;
 }
+
 footer p.right { float: right; }
+
+.questionHeader {
+	border: 2px solid black;
+	padding: 10px;
+	text-align: left;
+}
+
+.questionBlockDiv {
+	border: 5px solid blue;
+	padding: 15px;
+	margin: 10px auto;
+	width: 60%;
+}
+
+.questionAnswer {
+	border: 3px solid red;
+	padding: 3px;
+	margin: 5px 8px;
+}

@@ -1,15 +1,3 @@
-
-<!-- list of questions -->
-
-<div class="question">
-	<div class="content">
-		<% @questions.each do |question| %>
-			<div class="post">
-			<%= link_to(question) do %>
-			  	<h3>Question: <%= question.title %></h3>
-			  	<p>Description: <%= question.text %></p>
-			<% end -%>
-			</div>
-		<% end %>
-	</div>
-</div>
+<% current_user_as_json = current_user.to_json(:include => :votes) %>
+				
+<%= react_component('Main', currentUser: current_user_as_json) %>
