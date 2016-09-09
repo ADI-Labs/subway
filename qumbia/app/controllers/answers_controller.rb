@@ -35,10 +35,21 @@ class AnswersController < ApplicationController
   end
   
   def destroy
-    @question = Question.find(params[:question_id])
-    @answer = @question.answers.find(params[:id])
-    @answer.destroy
-    redirect_to article_path(@question)
+    @question = Question.find(params[:question_id].to_i)
+    @answer = @question.answers.find(params[:id].to_i)
+    respond_to do |format|
+      if @answer.user_id == current_user.id
+        logger.debug 'cathorse'
+        @answer.destroy
+        format.html { return }
+        format.json { head :no_content }
+      else
+        format.html { 
+          flash.now[:notice]="You don't have permission to perform this action" 
+        }
+        format.json { render json: "You don't have permission to perform this action"}
+      end
+    end
   end
   
   def vote
@@ -47,12 +58,7 @@ class AnswersController < ApplicationController
       isUpvote = (params[:isUpvote] == "true")
       if @vote 
         #user unclicked a selection
-        logger.debug '@vote.isUpvote: ' 
-        logger.debug @vote.isUpvote.class
-        logger.debug 'isUpvote: ' 
-        logger.debug isUpvote.class
         if (((not isUpvote) and (not @vote.isUpvote)) or (isUpvote and @vote.isUpvote))
-          logger.debug 'turtle'
           @vote.destroy
         #user changed selection up <-> down
         else

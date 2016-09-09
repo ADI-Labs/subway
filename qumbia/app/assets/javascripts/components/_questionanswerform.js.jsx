@@ -6,13 +6,11 @@ var QuestionAnswerForm = React.createClass({
 
 	handleSubmit: function(event) {
 		event.preventDefault();
-		console.log('dog');
 		var answer = this.props.questionAnswerText;
 		if (!answer) {
 			return;
 		}
 		this.handleAnswerSubmit(answer);
-		this.collapseAnswerForm();
 	},
 
 	handleAnswerSubmit: function(answerBody) {
@@ -21,13 +19,13 @@ var QuestionAnswerForm = React.createClass({
 						+ "/answers";
 		$.ajax({
 		      url: postUrl,
-		      dataType: 'json',
+		      dataType: 'html',
 		      type: 'POST',
 		      data: {answer: 
 		      			{body: answerBody}
 		      		},
 		      success: function(response) {
-		      	return true;
+		      	this.collapseAnswerForm();
 		      }.bind(this),
 		      error: function() {
 		        console.error("Answer create failed");

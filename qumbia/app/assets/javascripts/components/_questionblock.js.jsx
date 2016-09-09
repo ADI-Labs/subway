@@ -3,7 +3,8 @@ var QuestionBlock = React.createClass({
 	getInitialState: function() {
 		return {
 			questionAnswerText: "",
-			answerQuestionClicked: false
+			answerQuestionClicked: false,
+			questionDeleted: false
 		};
 	},
 
@@ -31,6 +32,8 @@ var QuestionBlock = React.createClass({
 					userEmail={answer.user.email} 
 					answerBody={answer.body} 
 					answer={answer}
+					currentUser={this.props.currentUser}
+					question={this.props.question}
 					currentUserUpvoted={userUpvotedAnswer}
 					currentUserDownvoted={userDownvotedAnswer}/>);
 		}.bind(this));
@@ -56,24 +59,52 @@ var QuestionBlock = React.createClass({
 		this.props.refreshQuestions();
 	},
 
+	handleDeleteClick: function(event) {
+		event.preventDefault();
+		var postUrl = "";
+	    var postUrl = "questions/"
+	    			+ this.props.question.id;
+		$.ajax({
+			url: postUrl,
+			dataType: 'json',
+			type: 'DELETE',
+			data: {},
+			success: function(response) {
+				this.setState({questionDeleted: true});
+			}.bind(this),
+			error: function() {
+				console.error("Delete failed");
+			}.bind(this)
+		});
+	},
+
 	render: function() {
-		return (
-			<div className="questionBlockDiv">
-				{this.generateQuestionHeader()}
-				{this.generateQuestionAnswers()}
-				{this.state.answerQuestionClicked ? 
-					(<span> <QuestionAnswerForm 
-						questionAnswerText={this.state.questionAnswerText}
-						onQuestionAnswerTextChange={this.handleQuestionAnswerTextChange}
-						onAnswerSubmit={this.handleAnswerSubmit}
-						questionId={this.props.question.id}
-						currentUser={this.props.currentUser}
-					 />
-					 <button onClick={this.toggleQuestionAnswerForm}> Cancel </button> </span>
-					)
-					: (<button onClick={this.toggleQuestionAnswerForm}>Answer Question</button>)
-				}
-			</div>
-		);
+		if (!this.state.questionDeleted) {
+			return (
+				<div className="questionBlockDiv">
+					{this.generateQuestionHeader()}
+					{(this.props.question.user.id === this.props.currentUser.id) 
+						? <input type="submit" value="Delete" onClick={this.handleDeleteClick} />
+						: null
+					}
+					{this.generateQuestionAnswers()}
+					{this.state.answerQuestionClicked ? 
+						(<span> <QuestionAnswerForm 
+							questionAnswerText={this.state.questionAnswerText}
+							onQuestionAnswerTextChange={this.handleQuestionAnswerTextChange}
+							onAnswerSubmit={this.handleAnswerSubmit}
+							questionId={this.props.question.id}
+							currentUser={this.props.currentUser}
+						 />
+						 <button onClick={this.toggleQuestionAnswerForm}> Cancel </button> </span>
+						)
+						: (<button onClick={this.toggleQuestionAnswerForm}>Answer Question</button>)
+					}
+				</div>
+			);
+		}
+		else {
+			return null;
+		}
 	}
 });
